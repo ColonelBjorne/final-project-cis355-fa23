@@ -1,0 +1,20 @@
+public class YourController
+{
+    private readonly LoggerService logger;
+
+    public YourController()
+    {
+        // Provide the path to your log file
+        this.logger = new LoggerService("path/to/your/logfile.txt");
+    }
+
+    public ActionResult SomeAction()
+    {
+        // Perform some action
+
+        // Log the user activity
+        logger.LogActivity("currentUsername", "Performed some action");
+
+        return View();
+    }
+}
